@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - VanAI</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" asp-controller="Home" asp-action="Index">VanAI</a>
+
+        <!-- Hamburger button: only visible on phones -->
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav>
+            <ul id="main-menu" class="menu">
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="About">About Me</a></li>
+                <li><a asp-controller="Home" asp-action="Hobbies">Hobbies</a></li>
+                <li><a asp-controller="Home" asp-action="Family">Family</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        &copy; @DateTime.Now.Year VanAI
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

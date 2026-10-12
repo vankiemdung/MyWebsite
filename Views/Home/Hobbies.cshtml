@@ -1,0 +1,19 @@
+@model List<Photo>
+@{
+    ViewData["Title"] = "Hobbies";
+}
+
+<section class="card">
+    <h1>My Hobbies</h1>
+    <p>Here are some things I love to do in my free time.</p>
+
+    <div class="gallery">
+        @foreach (var photo in Model)
+        {
+            <figure>
+                <img src="~/images/hobbies/@photo.FileName" alt="@photo.Caption" loading="lazy" />
+                <figcaption>@photo.Caption</figcaption>
+            </figure>
+        }
+    </div>
+</section>
